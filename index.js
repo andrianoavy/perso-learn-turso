@@ -6,8 +6,8 @@ dotenv.config();
 console.log("Client local!!!");
 
 const client_local = createClient({
+	// file:/// na file:/ ny manomboka azy
 	url:process.env.LOCAL_DB_URL,
-	// authToken:"my-token",
 });
 
 try {
@@ -22,7 +22,9 @@ try {
 
 console.log("\nClient distant!!!");
 const client_turso = createClient({
+	// alaina ao amin'ny tursoCLI `turso db tokens create nom-de-bdd` 
 	url:process.env.TURSO_DB_URL,
+	// `turso db list`
 	authToken:process.env.TURSO_DB_TOKEN,
 });
 
